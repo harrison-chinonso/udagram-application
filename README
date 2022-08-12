@@ -1,0 +1,16 @@
+The Image Filtering Microservice
+This is a Node-Express application which runs a simple script to process images.
+
+You can:
+1. Initialize this project using: `npm i`
+2. run the development server with `npm run dev`
+
+### Deploying your system
+Follow the process described in the course to `eb init` a new application and `eb create` a new environment to deploy your image-filter service! Don't forget you can use `eb deploy` to push changes.
+
+### You can access this server over the browser using DEV_URL(when running a local instance) or EB_URL(an elastic beanstalk instance running in the cloud).
+
+EB_URL=harry-udagram-dev.us-east-1.elasticbeanstalk.com
+DEV_URL=http://localhost:8082
+
+http://{{EB_URL}}/filteredimage?image_url=https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_tabby_and_white_kitten_n01.jpg
