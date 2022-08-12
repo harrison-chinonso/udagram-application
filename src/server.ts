@@ -28,7 +28,7 @@ import {filterImageFromURL, deleteLocalFiles, getAllFilesInFolder} from './util/
   //   the filtered image file [!!TIP res.sendFile(filteredpath); might be useful]
 
   app.get("/filteredimage", async (req, res) => {
-    const {image_url} = req.query
+    let image_url: string = req.query.image_url;
 
     if (!image_url) {
       return res.status(400).send("image url is required")
@@ -40,7 +40,9 @@ import {filterImageFromURL, deleteLocalFiles, getAllFilesInFolder} from './util/
          res.status(404).send("image not found");
       } else {
          res.status(200).sendFile(filteredpath);
-         await deleteLocalFiles(getAllFilesInFolder());
+         res.on('finish', function() {
+            deleteLocalFiles(getAllFilesInFolder());
+          });
       }
     }catch(error){
       console.log(error)

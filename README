@@ -10,7 +10,7 @@ Follow the process described in the course to `eb init` a new application and `e
 
 ### You can access this server over the browser using DEV_URL(when running a local instance) or EB_URL(an elastic beanstalk instance running in the cloud).
 
-EB_URL=harry-udagram-dev.us-east-1.elasticbeanstalk.com
+EB_URL=http://harry-udagram-dev.us-east-1.elasticbeanstalk.com
 DEV_URL=http://localhost:8082
 
 http://{{EB_URL}}/filteredimage?image_url=https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_tabby_and_white_kitten_n01.jpg
